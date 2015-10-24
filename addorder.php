@@ -130,17 +130,17 @@ if (isset ($_POST["submit"])) {
 		$errMsg = "";
 		switch ($cardtype) {
 			case "Visa":
-			if (!$number.match(/4[0-9]{15}/g)) {
+			if (!preg_match("/4[0-9]{15}/g",$number)) {
 				$errMsg = "Visa cards have 16 digits and start with a 4";
 			}
 			break;
 			case "Mastercard":
-			if (!$number.match(/5[1-5][0-9]{14}/g)) {
+			if (!preg_match("/5[1-5][0-9]{14}/g",$number)) {
 				$errMsg = "MasterCard have 16 digits and start with digits 51 through to 55";
 			}
 			break;
 			case "American Express":
-			if (!$number.match(/3[47][0-9]{13}/g)) {
+			if (!preg_match("/3[47][0-9]{13}/g",$number)) {
 				$errMsg = "American Express has 15 digits and starts with 34 or 37";
 			}
 			break;
