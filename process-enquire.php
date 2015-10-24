@@ -26,17 +26,23 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	if (isset ($_POST["course"])) {
 		$course = $_POST["course"];
 	}
-	if (isset ($_POST["location"])) {
-		$location = $_POST["location"];
-	}
-	if (isset ($_POST["length"])) {
-		$length = $_POST["length"];
-	}
+
+	$location = "";
+	if (isset ($_POST["Online"])) $tour = "Online";
+	if (isset ($_POST["University"])) $tour = "University";
+
+	$length = "";
+	if (isset ($_POST["5 days"])) $tour = "5 days";
+	if (isset ($_POST["10 days"])) $tour = "10 days";
+	if (isset ($_POST["3 weeks"])) $tour = "3 weeks";
+	if (isset ($_POST["5 weeks"])) $tour = "5 weeks";
+	if (isset ($_POST["10 weeks"])) $tour = "10 weeks";
+
 	if (isset ($_POST["seats"])) {
 		$seats = $_POST["seats"];
 	}
-	if (isset ($_POST["comments"])) {
-		$comments = $_POST["comments"];
+	if (isset ($_POST["comment"])) {
+		$comments = $_POST["comment"];
 	}
 
 	function sanitise_input($data) {
@@ -93,7 +99,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$errMsg .= "<p>You must enter your suburb.</p>";
 	}
 	if (!preg_match(".{1,20}",$suburb)) {
-		$errMsg .= "<p>Maximum of 20 characters, alphabetical for your suburb.</p>";
+		$errMsg .= "<p>Maximum of 20 characters for your suburb.</p>";
 	}
 
 	if ($state=="") {
@@ -133,7 +139,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$errMsg .= "<p>You must enter how many seats you want to book.</p>";
 	}
 	if ((!is_numeric($seats)) || ($seats < 0) || (100 < $seats)) {
-		$errMsg .= "<p>You enter a positive number between 1 and 100.</p>";
+		$errMsg .= "<p>You enter a positive number between 1 and 100 for seats.</p>";
 	}
 
 	if ($errMsg != ""){
