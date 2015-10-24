@@ -127,7 +127,7 @@ if (isset ($_POST["submit"])) {
 
 	// checks card number against the card type
 	function checkCardNumber($cardtype, $number) {
-		$errMsg = ""
+		$errMsg = "";
 		switch ($cardtype) {
 			case "Visa":
 			if (!$number.match(/4[0-9]{15}/g)) {
