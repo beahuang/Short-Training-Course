@@ -66,7 +66,8 @@ if (!$conn) {
  					creditname varchar(30)  NOT  NULL ,
  					cardnumber int(16)  NOT  NULL ,
  					cardexpiry varchar(5)  NOT  NULL ,
- 					order_status enum('PENDING',  'FUFILLED',  'PAID') DEFAULT  'PENDING')";
+ 					order_status enum('PENDING',  'FUFILLED',  'PAID') DEFAULT  'PENDING',
+ 					PRIMARY  KEY (order_id))";
 
 	$insert_query = "insert into $sql_table (firstname, lastname,email,streetaddress,suburb,state,postcode,phone,course,location,length,seats,comments,cost,bname,bstreetaddress,bsuburb,bstate,bpostcode,creditcard,creditname,cardnumber,cardexpiry) values ('$firstname','$lastname','$email','$streetaddress','$suburb','$state','$postcode','$phone','$course','$location','$length','$seats','$comments','$cost','$bname','$bstreetaddress','$bsuburb','$bstate','$bpostcode','$creditcard','$creditname','$cardnumber','$cardexpiry')";
 
@@ -74,9 +75,8 @@ if (!$conn) {
 	$tableExists = mysqli_query($conn, $tableExistsQuery);
 
 	if(empty($tableExists)) {
-		$result = mysqli_query($conn, $create_table);
-
-		// $result = mysqli_query($conn, $insert_query);
+		mysqli_query($conn, $create_table);
+		$result = mysqli_query($conn, $insert_query);
 		if(!$result) {
 			echo "<p class=\"wrong\">Something is wrong with ", $create_table, "</p>";
 		} else {
