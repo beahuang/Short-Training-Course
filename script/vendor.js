@@ -16,7 +16,7 @@ function init () {
 			document.getElementById("nameKey").className = "";
 			document.getElementById("productKey").className = "hidden";
 		}
-		if {
+		else if {
 			document.getElementById("productKey").className = "";
 			document.getElementById("nameKey").className = "hidden";
 		}
