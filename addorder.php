@@ -111,8 +111,8 @@ if (isset ($_POST["submit"])) {
 
 	// Checks if the expiration date of the card is earlier than today's date
 	function checkExpiry($date) {
-		$cmm = parseInt($date.substring(0,2));
-		$cyy = parseInt($date.substring(3,5));
+		$cmm = $date.substring(0,2);
+		$cyy = $date.substring(3,5);
 		$expires = \DateTime::createFromFormat('my', $cmm.$cyy);
 		$now     = new \DateTime();
 
