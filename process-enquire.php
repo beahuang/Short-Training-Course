@@ -105,7 +105,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	}
 	$errMsg = $errMsg + checkPostcode($state,$postcode);
 
-	function checkPostcode(state, postcode) {
+	function checkPostcode($state, $postcode) {
 		var errMsg = ""
 		switch (state) {
 			case "VIC":
