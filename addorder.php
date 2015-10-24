@@ -74,7 +74,7 @@ if (!$conn) {
 	$tableExistsQuery = "SELECT order_id FROM $sql_table";
 	$tableExists = mysqli_query($dbConnection, $query);
 
-	if(empty($tableExists?)) {
+	if(empty($tableExists)) {
 		mysqli_query($dbConnection, $create_table);
 		$result = mysqli_query($conn, $insert_query);
 		if(!$result) {
