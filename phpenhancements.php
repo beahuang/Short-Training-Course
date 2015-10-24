@@ -16,7 +16,7 @@
 	<section class="container enhancement">
 		<h3>Here are all the php enhancements of assignment 1</h3>
 		<ul>
-			<li>I made it so that instead of using javascript cookies to store form data I used php session variables</li>
+			<li>I made it so that instead of using javascript cookies to store form data I used php session variables. It makes it so that instead of needing to push variables into hidden fields i could just use the same variables in serverside validation</li>
 		</ul>
 	</section>
 	<?php include("includes/footer.php"); ?>
