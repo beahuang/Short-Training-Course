@@ -16,7 +16,7 @@ function init () {
 			document.getElementById("nameKey").className = "";
 			document.getElementById("productKey").className = "hidden";
 		}
-		else if {
+		if (orderbyProduct.checked){
 			document.getElementById("productKey").className = "";
 			document.getElementById("nameKey").className = "hidden";
 		}
