@@ -4,8 +4,10 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="description" content="Creating Web Applications Lab 10" />
-	<meta name="keywords" content="PHP, MySql" />
+	<meta name="description" content="Enquire about the short training course" />
+	<meta name="keywords" content="short, training, course, short training course" />
+	<meta name="author" content="Beatrice Huang" />
+	<link rel="stylesheet" href="styles/style.css"/>
 	<title>Process Order</title>
 </head>
 <body>
@@ -215,7 +217,9 @@ if (isset ($_POST["submit"])) {
 					if(!$result) {
 						echo "<p class='wrong'>Something is wrong with ", $insert_query, "</p>";
 					} else {
-						echo "<p class='ok'>Successfully added order</p>";
+						echo "<h3>Congratulations $firstname $lastname!</h3></br>
+							<p>You've Successfully ordered the $course course with the period of $length with the location of $location for $cost</br>
+							Thanks for doing business with us!</p>";
 					}
 				}
 		mysqli_close($conn);
