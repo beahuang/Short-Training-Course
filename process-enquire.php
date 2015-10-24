@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	$firstname = $_POST["firstname"];
 
