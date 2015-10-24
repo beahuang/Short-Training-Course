@@ -76,12 +76,12 @@ if (!$conn) {
 
 	if(empty($tableExists)) {
 		mysqli_query($conn, $create_table);
-		$result = mysqli_query($conn, $insert_query);
-		if(!$result) {
-			echo "<p class=\"wrong\">Something is wrong with ", $insert_query, "</p>";
-		} else {
-			echo "<p class=\"ok\">Successfully added order</p>";
-		}
+		// $result = mysqli_query($conn, $insert_query);
+		// if(!$result) {
+		// 	echo "<p class=\"wrong\">Something is wrong with ", $insert_query, "</p>";
+		// } else {
+		// 	echo "<p class=\"ok\">Successfully added order</p>";
+		// }
 	} else {
 		$result = mysqli_query($conn, $insert_query);
 		if(!$result) {
