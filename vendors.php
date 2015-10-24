@@ -38,11 +38,11 @@
 				<label for="cost">Cost</label>
 				<input type="radio" id="cost" name="orderType" value="cost"/>
 			</p>
-			<p id="nameKey">
+			<p id="nameKey" class="hidden">
 				<label for="orderName">Keyword:</label>
 				<input type="text" name= "orderName" id="orderName" placeholder="John"/>
 			</p>
-			<p id="productKey">
+			<p id="productKey" class="hidden">
 				<label for="orderProduct">Keyword:</label>
 				<input type="text" name= "orderProduct" id="orderProduct" placeholder="Course Name"/>
 			</p>
