@@ -190,7 +190,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 
 	// cuts down cost based off the location of the course
 	function calcCost($location, $length){
-		$cost = weekstoDays($length)
+		$cost = weekstoDays($length);
 		if ($location == "Online") {
 			$cost = $cost / 2;
 			return $cost;
