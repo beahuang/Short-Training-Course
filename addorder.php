@@ -113,7 +113,7 @@ if (isset ($_POST["submit"])) {
 	function checkExpiry($date) {
 		$cmm = parseInt($date.substring(0,2));
 		$cyy = parseInt($date.substring(3,5));
-		$expires = \DateTime::createFromFormat('my', $cmm$cyy);
+		$expires = \DateTime::createFromFormat('my', $cmm.$cyy);
 		$now     = new \DateTime();
 
 		if ($expires < $now) {
