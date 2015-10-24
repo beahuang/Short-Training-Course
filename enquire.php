@@ -85,22 +85,22 @@
 				<p class="radio">
 					<strong>Course Location:</strong>
 					<label for="online">Online</label>
-					<input type="radio" id="online" name="location[]" value="Online" checked="checked" />
+					<input type="radio" id="online" name="location" value="Online" checked="checked" />
 					<label for="campus">University</label>
-					<input type="radio" id="campus" name="location[]" value="On Campus"/>
+					<input type="radio" id="campus" name="location" value="On Campus"/>
 				</p>
 				<p class="radio">
 					<strong>Length of Course:</strong>
 					<label for="length1">5 days</label>
-					<input type="radio" id="length1" name="length[]" value="5 days" checked="checked" />
+					<input type="radio" id="length1" name="length" value="5 days" checked="checked" />
 					<label for="length2">10 days</label>
-					<input type="radio" id="length2" name="length[]" value="10 days"/>
+					<input type="radio" id="length2" name="length" value="10 days"/>
 					<label for="length3">3 weeks</label>
-					<input type="radio" id="length3" name="length[]" value="3 weeks"/>
+					<input type="radio" id="length3" name="length" value="3 weeks"/>
 					<label for="length4">5 weeks</label>
-					<input type="radio" id="length4" name="length[]" value="5 weeks"/>
+					<input type="radio" id="length4" name="length" value="5 weeks"/>
 					<label for="length5">10 weeks</label>
-					<input type="radio" id="length5" name="length[]" value="10 weeks"/>
+					<input type="radio" id="length5" name="length" value="10 weeks"/>
 				</p>
 				<p class="small-text">Cost of course dependent on: 100$ a day, taking a course online is 1/2 the price of on-campus and amount of seats purchasing</p>
 				<p><label for="seats">Amount of Seats:</label>
