@@ -16,6 +16,7 @@ if (!$conn) {
 } else {
 	$sql_table="orders";
 
+	//already checked in process-enquire.php
 	$firstname = trim($_POST["firstname"]);
 	$lastname = trim($_POST["lastname"]);
 	$email = trim($_POST["email"]);
@@ -29,6 +30,7 @@ if (!$conn) {
 	$length = trim($_POST["length"]);
 	$seats = trim($_POST["seats"]);
 	$comments = trim($_POST["comments"]);
+
 	$cost = trim($_POST["cost"]);
 	$bname = trim($_POST["bfirstname"]);
 	$bstreetaddress = trim($_POST["bstreetaddress"]);
@@ -39,6 +41,8 @@ if (!$conn) {
 	$creditname = trim($_POST["creditname"]);
 	$cardnumber = trim($_POST["cardnumber"]);
 	$cardexpiry = trim($_POST["cardexpiry"]);
+
+
 
 	$create_table = "CREATE TABLE orders(
 					order_id int(11)  NOT  NULL  AUTO_INCREMENT,
@@ -78,16 +82,16 @@ if (!$conn) {
 		mysqli_query($conn, $create_table);
 		$result = mysqli_query($conn, $insert_query);
 		if(!$result) {
-			echo "<p class=\"wrong\">Something is wrong with ", $create_table, "</p>";
+			echo "<p class='wrong'>Something is wrong with ", $insert_query, "</p>";
 		} else {
-			echo "<p class=\"ok\">Successfully added order</p>";
+			echo "<p class='ok'>Successfully added order</p>";
 		}
 	} else {
 		$result = mysqli_query($conn, $insert_query);
 		if(!$result) {
-			echo "<p class=\"wrong\">Something is wrong with ", $insert_query, "</p>";
+			echo "<p class='wrong'>Something is wrong with ", $insert_query, "</p>";
 		} else {
-			echo "<p class=\"ok\">Successfully added order</p>";
+			echo "<p class='ok'>Successfully added order</p>";
 		}
 	}
 

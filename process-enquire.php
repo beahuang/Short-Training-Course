@@ -170,10 +170,55 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$errMsg .= "<p>You enter a positive number between 1 and 100 for seats.</p>";
 	}
 
+	//calculates week -> day
+	function weekstoDays($length) {
+		switch ($length) {
+			case "5 days":
+			return 100 * 5;
+			case "10 days":
+			return 100 * 10
+			case "3 weeks":
+			return 100 * 21;
+			case "5 weeks":
+			return 100 * 35;
+			case "10 weeks":
+			return 100 * 70;
+			default:
+			return "0"
+		}
+	}
+
+	// cuts down cost based off the location of the course
+	function calcCost($location, $length){
+		$cost = weekstoDays($length)
+		if ($location == "Online") {
+			$cost = $cost / 2;
+			return $cost;
+		}
+		else {
+			return $cost;
+		}
+	}
+
 	if ($errMsg != ""){
 		echo "<p>$errMsg</p>";
 	}
 	else {
+		$_SESSION["firstname"] = $firstname;
+		$_SESSION["lastname"] = $lastname;
+		$_SESSION["email"] = $email;
+		$_SESSION["streetAddress"] = $streetaddress;
+		$_SESSION["suburb"] = $suburb;
+		$_SESSION["state"] = $state;
+		$_SESSION["postcode"] = $postcode;
+		$_SESSION["phone"] = $phone;
+		$_SESSION["course"] = $course;
+		$_SESSION["location"] = $location;
+		$_SESSION["length"] = $length;
+		$_SESSION["seats"] = $seats;
+		$_SESSION["comments"] = $comments;
+		$_SESSION["cost"] = calcCost($location,$length);
+
 		header("location:payment.php");
 	}
 }

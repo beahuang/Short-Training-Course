@@ -140,37 +140,6 @@ function checkCardNumber(cardtype, number) {
 	return errMsg;
 }
 
-// calculates the cost based off of amount of days of course
-function weekstoDays(length) {
-	console.log(length);
-	switch (length) {
-		case "5 days":
-		return 100 * 5;
-		case "10 days":
-		return 100 * 10
-		case "3 weeks":
-		return 100 * 21;
-		case "5 weeks":
-		return 100 * 35;
-		case "10 weeks":
-		return 100 * 70;
-		default:
-		return "0"
-	}
-}
-
-// cuts down cost based off the location of the course
-function calcCost(location, clength){
-	var cost = weekstoDays(clength)
-	if (location == "Online") {
-		cost = cost / 2;
-		return cost;
-	}
-	else {
-		return cost;
-	}
-}
-
 // gets the information from the session storage and fills in hidden fields to send to server
 function getDetails(){
 	var cost = 0;
