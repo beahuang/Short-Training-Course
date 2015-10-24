@@ -66,42 +66,42 @@ if (isset ($_POST["submit"])) {
 		switch ($bstate) {
 			case "VIC":
 			if (!preg_match("/^[3,8].*$/",$bpostcode)) {
-				$errMsg = "If you're from VIC your billing postcode starts with 3 or 8";
+				$errMsg = "<p>If you're from VIC your billing postcode starts with 3 or 8</p>";
 			}
 			break;
 			case "NSW":
 			if (!preg_match("/^[1,2].*$/",$bpostcode)) {
-				$errMsg = "If you're from NSW your billing postcode starts with 1 or 2";
+				$errMsg = "<p>If you're from NSW your billing postcode starts with 1 or 2</p>";
 			}
 			break;
 			case "QLD":
 			if (!preg_match("/^[4,9].*$/",$bpostcode)) {
-				$errMsg = "If you're from QLD your billing postcode starts with 4 or 9";
+				$errMsg = "<p>If you're from QLD your billing postcode starts with 4 or 9</p>";
 			}
 			break;
 			case "NT":
 			if (!preg_match("/^[0].*$/",$bpostcode)) {
-				$errMsg = "If you're from NT your billing postcode starts with 0";
+				$errMsg = "<p>If you're from NT your billing postcode starts with 0</p>";
 			}
 			break;
 			case "WA":
 			if (!preg_match("/^[6].*$/",$bpostcode)) {
-				$errMsg = "If you're from WA your billing postcode starts with 6";
+				$errMsg = "<p>If you're from WA your billing postcode starts with 6</p>";
 			}
 			break;
 			case "SA":
 			if (!preg_match("/^[5].*$/",$bpostcode)) {
-				$errMsg = "If you're from SA your billing postcode starts with 5";
+				$errMsg = "<p>If you're from SA your billing postcode starts with 5</p>";
 			}
 			break;
 			case "TAS":
 			if (!preg_match("/^[7].*$/",$bpostcode)) {
-				$errMsg = "If you're from TAS your billing postcode starts with 7";
+				$errMsg = "<p>If you're from TAS your billing postcode starts with 7</p>";
 			}
 			break;
 			case "ACT":
 			if (!preg_match("/^[0].*$/",$bpostcode)) {
-				$errMsg = "If you're from ACT your billing postcode starts with 0";
+				$errMsg = "<p>If you're from ACT your billing postcode starts with 0</p>";
 			}
 			break;
 		}
@@ -117,7 +117,7 @@ if (isset ($_POST["submit"])) {
 		$now     = new \DateTime();
 
 		if ($expires < $now) {
-			return "This creditcard has expired";
+			return "<p>This creditcard has expired</p>";
 		}
 		else {
 			return "";
@@ -131,21 +131,21 @@ if (isset ($_POST["submit"])) {
 		switch ($cardtype) {
 			case "Visa":
 			if (!preg_match("/4[0-9]{15}/",$number)) {
-				$errMsg = "Visa cards have 16 digits and start with a 4";
+				$errMsg = "<p>Visa cards have 16 digits and start with a 4</p>";
 			}
 			break;
 			case "Mastercard":
 			if (!preg_match("/5[1-5][0-9]{14}/",$number)) {
-				$errMsg = "MasterCard have 16 digits and start with digits 51 through to 55";
+				$errMsg = "<p>MasterCard have 16 digits and start with digits 51 through to 55</p>";
 			}
 			break;
 			case "American Express":
 			if (!preg_match("/3[47][0-9]{13}/",$number)) {
-				$errMsg = "American Express has 15 digits and starts with 34 or 37";
+				$errMsg = "<p>American Express has 15 digits and starts with 34 or 37</p>";
 			}
 			break;
 			default:
-			$errMsg = "Please choose a card type";
+			$errMsg = "<p>Please choose a card type</p>";
 		}
 		return $errMsg;
 	}
@@ -166,7 +166,7 @@ if (isset ($_POST["submit"])) {
 			$create_table = "CREATE TABLE orders(
 							order_id int(11)  NOT  NULL  AUTO_INCREMENT,
 		 					orderdate timestamp NOT  NULL  DEFAULT CURRENT_TIMESTAMP,
-		 					firstname c$har(25)  NOT  NULL,
+		 					firstname varchar(25)  NOT  NULL,
 		 					lastname varchar(25)  NOT  NULL ,
 		 					email varchar(255)  NOT  NULL ,
 		 					streetaddress varchar(40)  NOT  NULL ,
