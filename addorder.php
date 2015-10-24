@@ -72,10 +72,10 @@ if (!$conn) {
 	$insert_query = "insert into $sql_table (firstname, lastname,email,streetaddress,suburb,state,postcode,phone,course,location,length,seats,comments,cost,bname,bstreetaddress,bsuburb,bstate,bpostcode,creditcard,creditname,cardnumber,cardexpiry) values ('$firstname','$lastname','$email','$streetaddress','$suburb','$state','$postcode','$phone','$course','$location','$length','$seats','$comments','$cost','$bname','$bstreetaddress','$bsuburb','$bstate','$bpostcode','$creditcard','$creditname','$cardnumber','$cardexpiry')";
 
 	$tableExistsQuery = "SELECT order_id FROM $sql_table";
-	$tableExists = mysqli_query($dbConnection, $query);
+	$tableExists = mysqli_query($conn, $query);
 
 	if(empty($tableExists)) {
-		mysqli_query($dbConnection, $create_table);
+		mysqli_query($conn, $create_table);
 		$result = mysqli_query($conn, $insert_query);
 		if(!$result) {
 			echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
