@@ -117,7 +117,7 @@ if (isset ($_POST["submit"])) {
 		$now     = new \DateTime();
 
 		if ($expires < $now) {
-			return "This creditcard has expired"
+			return "This creditcard has expired";
 		}
 		else {
 			return "";
@@ -131,21 +131,21 @@ if (isset ($_POST["submit"])) {
 		switch ($cardtype) {
 			case "Visa":
 			if (!$number.match(/4[0-9]{15}/g)) {
-				$errMsg = "Visa cards have 16 digits and start with a 4"
+				$errMsg = "Visa cards have 16 digits and start with a 4";
 			}
 			break;
 			case "Mastercard":
 			if (!$number.match(/5[1-5][0-9]{14}/g)) {
-				$errMsg = "MasterCard have 16 digits and start with digits 51 through to 55"
+				$errMsg = "MasterCard have 16 digits and start with digits 51 through to 55";
 			}
 			break;
 			case "American Express":
 			if (!$number.match(/3[47][0-9]{13}/g)) {
-				$errMsg = "American Express has 15 digits and starts with 34 or 37"
+				$errMsg = "American Express has 15 digits and starts with 34 or 37";
 			}
 			break;
 			default:
-			$errMsg = "Please choose a card type"
+			$errMsg = "Please choose a card type";
 		}
 		return $errMsg;
 	}
