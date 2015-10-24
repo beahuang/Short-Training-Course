@@ -103,8 +103,6 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	if (!preg_match("/[0-9]{4}/",$postcode)) {
 		$errMsg .= "<p>Exactly four digits for your postcode.</p>";
 	}
-	$errMsg = $errMsg + checkPostcode($state,$postcode);
-
 	function checkPostcode($state, $postcode) {
 		$errMsg = "";
 		switch ($state) {
@@ -153,6 +151,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		}
 		return $errMsg;
 	}
+	$errMsg = $errMsg + checkPostcode($state,$postcode);
 
 	if ($phone=="") {
 		$errMsg .= "<p>You must enter your phone number.</p>";
