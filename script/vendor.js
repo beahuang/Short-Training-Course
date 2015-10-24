@@ -10,24 +10,22 @@
 
 // initial function call
 function init () {
-	var orderbyName = document.getElementById("name");
-	orderbyName.addEventListener("click", function(){
+	var radio = document.getElementById("vendor").orderType;
+	radio.addEventListener("click", function(){
 		if (orderbyName.checked) {
 			document.getElementById("nameKey").className = "";
 			document.getElementById("productKey").className = "hidden";
-		} else {
-			document.getElementById("nameKey").className = "hidden";
 		}
-	})
-	var orderbyProduct = document.getElementById("product");
-	orderbyProduct.addEventListener("click", function(){
-		if (orderbyProduct.checked) {
+		if {
 			document.getElementById("productKey").className = "";
 			document.getElementById("nameKey").className = "hidden";
-		} else {
-			document.getElementById("productKey").className = "hidden";
 		}
-	})
+		else {
+			document.getElementById("productKey").className = "hidden";
+			document.getElementById("nameKey").className = "hidden";
+		}
+
+	});
 
 	var orderStatus = document.getElementById("showUpdateOrder");
 	orderStatus.addEventListener("click", function(){
