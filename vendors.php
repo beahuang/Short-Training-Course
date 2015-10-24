@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="styles/style.css"/>
 	<title>Short Training Course</title>
 </head>
-<body class="vendor">
+<body class="vendor container">
 	<?php include("includes/nav.php");?>
 	<header class='small-banner'>
 		<h3 class='container'>Processing Order</h3>
