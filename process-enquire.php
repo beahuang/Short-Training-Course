@@ -94,7 +94,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	}
 
 	if ($state=="") {
-		$errMsg .= "<p>You must enter your state.</p>";
+		$errMsg .= "<p>You must enter a state.</p>";
 	}
 
 	if ($postcode=="") {
@@ -163,8 +163,8 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$errMsg .= "<p>You must enter a number for your phone number.</p>";
 	}
 
-	if ($length=="") {
-		$errMsg .= "<p>You must enter choose a length for your course.</p>";
+	if ($course=="") {
+		$errMsg .= "<p>You must enter choose a course</p>";
 	}
 
 	if ($seats=="") {
