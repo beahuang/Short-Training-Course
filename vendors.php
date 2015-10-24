@@ -94,7 +94,7 @@
 	} else {
 
 	$sql_table="orders";
-	$vendorQuery="select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY $vendorQueryBy";
+	$vendorQuery="select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY order_id";
 	$result = mysqli_query($conn, $vendorQuery);
 
 	if(!$result) {
