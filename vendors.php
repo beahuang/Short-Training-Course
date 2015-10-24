@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	 if (!isset ($_SESSION["vendorQuery"])) {
-	 	$_SESSION["vendorQuery"] = "select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY order_id";
+	 	$_SESSION["vendorQuery"] = "select * FROM orders";
 	}
 
 	$vendorQuery = $_SESSION["vendorQuery"];
