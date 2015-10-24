@@ -20,12 +20,12 @@ function init () {
 			document.getElementById("productKey").className = "hidden";
 			document.getElementById("statusKey").className = "hidden";
 		}
-		if (orderbyProduct.checked){
+		else if (orderbyProduct.checked){
 			document.getElementById("productKey").className = "";
 			document.getElementById("nameKey").className = "hidden";
 			document.getElementById("statusKey").className = "hidden";
 		}
-		if (orderbyStatus.checked){
+		else if (orderbyStatus.checked){
 			document.getElementById("productKey").className = "hidden";
 			document.getElementById("nameKey").className = "hidden";
 			document.getElementById("statusKey").className = "";
