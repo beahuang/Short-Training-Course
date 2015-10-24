@@ -40,7 +40,7 @@ if (!$conn) {
 	$cardnumber = trim($_POST["cardnumber"]);
 	$cardexpiry = trim($_POST["cardexpiry"]);
 
-	$create_table = "CREATE TABLE IF NOT EXISTS orders(
+	$create_table = "CREATE TABLE orders(
 					'order_id' int(11)  NOT  NULL  AUTO_INCREMENT,
  					'orderdate' timestamp NOT  NULL  DEFAULT CURRENT_TIMESTAMP,
  					'firstname' varchar(5)  NOT  NULL,
