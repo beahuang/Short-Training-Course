@@ -113,7 +113,7 @@
 		    		<input type="text" id="cardexpiry" name="cardexpiry" required="required" placeholder="mm/yy" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" title="Format mm/yy" maxlength="5" size="5" />
 		    	</p>
 		    </fieldset>
-			<input type= "submit" value="Confirm Payment"/>
+			<input type= "submit" name="submit" value="Confirm Payment"/>
 			<button type="button" id="cancelButton">Cancel</button>
 		</form>
 	</section>

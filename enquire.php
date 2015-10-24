@@ -49,7 +49,7 @@
 					<select name="state" id="state" required="required">
 						<option value="">Please Select</option>
 						<option value="VIC">VIC</option>
-						<option value="NSQ">NSW</option>
+						<option value="NSW">NSW</option>
 						<option value="QLD">QLD</option>
 						<option value="NT">NT</option>
 						<option value="WA">WA</option>

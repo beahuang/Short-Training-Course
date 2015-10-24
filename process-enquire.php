@@ -167,7 +167,8 @@ if (isset ($_POST["submit"])) {
 	}
 
 	if ($errMsg != ""){
-		echo "<p>$errMsg</p>";
+		echo "<h2>Please correct the following errors before submitting again:</h2>
+			<p>$errMsg</p>";
 	}
 	else {
 		$_SESSION["firstname"] = $firstname;
