@@ -50,15 +50,15 @@ if (isset ($_POST["submit"])) {
 		$errMsg .= "<p>Maximum of 30 characters, alphabetical only for your billing name.</p>";
 	}
 
-	if (!preg_match("/.{1,40}/",$bstreetaddress)) {
+	if (!preg_match("/.{1,40}/",$bstreetaddress) && ($bname != "")) {
 		$errMsg .= "<p>Maximum 40 characters for your billing street address.</p>";
 	}
 
-	if (!preg_match("/.{1,20}/",$bsuburb)) {
+	if (!preg_match("/.{1,20}/",$bsuburb) && ($bsuburb != "")) {
 		$errMsg .= "<p>Maximum of 20 characters for your billing suburb.</p>";
 	}
 
-	if (!preg_match("/[0-9]{4}/",$bpostcode)) {
+	if (!preg_match("/[0-9]{4}/",$bpostcode) && ($bpostcode != "")) {
 		$errMsg .= "<p>Exactly four digits for your billing postcode.</p>";
 	}
 	function checkPostcode($bstate, $bpostcode) {
