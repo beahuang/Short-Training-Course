@@ -110,42 +110,42 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		switch ($state) {
 			case "VIC":
 			if (!preg_match("/^[3,8].*$/",$postcode)) {
-				$errMsg = "If you're from VIC your postcode starts with 3 or 8"
+				$errMsg = "If you're from VIC your postcode starts with 3 or 8";
 			}
 			break;
 			case "NSW":
 			if (!preg_match("/^[1,2].*$/",$postcode)) {
-				$errMsg = "If you're from NSW your postcode starts with 1 or 2"
+				$errMsg = "If you're from NSW your postcode starts with 1 or 2";
 			}
 			break;
 			case "QLD":
 			if (!preg_match("/^[4,9].*$/",$postcode)) {
-				$errMsg = "If you're from QLD your postcode starts with 4 or 9"
+				$errMsg = "If you're from QLD your postcode starts with 4 or 9";
 			}
 			break;
 			case "NT":
 			if (!preg_match("/^[0].*$/",$postcode)) {
-				$errMsg = "If you're from NT your postcode starts with 0"
+				$errMsg = "If you're from NT your postcode starts with 0";
 			}
 			break;
 			case "WA":
 			if (!preg_match("/^[6].*$/",$postcode)) {
-				$errMsg = "If you're from WA your postcode starts with 6"
+				$errMsg = "If you're from WA your postcode starts with 6";
 			}
 			break;
 			case "SA":
 			if (!preg_match("/^[5].*$/",$postcode)) {
-				$errMsg = "If you're from SA your postcode starts with 5"
+				$errMsg = "If you're from SA your postcode starts with 5";
 			}
 			break;
 			case "TAS":
 			if (!preg_match("/^[7].*$/",$postcode)) {
-				$errMsg = "If you're from TAS your postcode starts with 7"
+				$errMsg = "If you're from TAS your postcode starts with 7";
 			}
 			break;
 			case "ACT":
 			if (!preg_match("/^[0].*$/",$postcode)) {
-				$errMsg = "If you're from ACT your postcode starts with 0"
+				$errMsg = "If you're from ACT your postcode starts with 0";
 			}
 			break;
 			default:
