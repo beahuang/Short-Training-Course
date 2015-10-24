@@ -11,7 +11,7 @@
 // initial function call
 function init () {
 	var orderbyName = document.getElementById("name");
-	orderbyName.addEventListener("change", function(){
+	orderbyName.addEventListener("click change", function(){
 		if (orderbyName.checked) {
 			document.getElementById("nameKey").className = "";
 		} else {
@@ -19,7 +19,7 @@ function init () {
 		}
 	})
 	var orderbyProduct = document.getElementById("product");
-	orderbyProduct.addEventListener("change", function(){
+	orderbyProduct.addEventListener("click change", function(){
 		if (orderbyProduct.checked) {
 			document.getElementById("productKey").className = "";
 		} else {
