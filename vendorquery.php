@@ -19,21 +19,21 @@
 
 	switch ($orderType) {
 		case "all":
-			$_SESSION["vendorQueryBy"] = "order_id";
+			$_SESSION["vendorQuery"] = "select * FROM orders ORDER BY order_id";
 		break;
 		// case "name":
-		// 	$_SESSION["vendorQueryBy"] = "";
+		// 	$_SESSION["vendorQuery"] = "";
 		// 	$_SESSION["vendorQuery"] = "";
 		// break;
 		// case "product":
-		// 	$_SESSION["vendorQueryBy"] = "";
+		// 	$_SESSION["vendorQuery"] = "";
 		// 	$_SESSION["vendorQuery"] = "";
 		// break;
 		case "status":
-			$_SESSION["vendorQueryBy"] = "order_status";
+			$_SESSION["vendorQuery"] = "select * FROM orders ORDER BY order_status";
 		break;
 		case "cost":
-			$_SESSION["vendorQueryBy"] = "cost";
+			$_SESSION["vendorQuery"] = "select * FROM orders ORDER BY cost";
 		break;
 	}
 
