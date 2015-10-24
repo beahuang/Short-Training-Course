@@ -9,7 +9,10 @@
 	<title>Process Order</title>
 </head>
 <body>
-	<h1>Processing Order</h1>
+<header class="small-banner">
+	<h3 class="container">Processing Order</h3>
+</header>
+<section class="container">
 <?php
 //already checked in process-enquire.php
 $firstname = $_SESSION["firstname"];
@@ -203,7 +206,9 @@ if (isset ($_POST["submit"])) {
 					if(!$result) {
 						echo "<p class='wrong'>Something is wrong with ", $insert_query, "</p>";
 					} else {
-						echo "<p class='ok'>Successfully added order</p>";
+						echo "<h3>Congratulations $firstname $lastname!</h3></br>
+							<p>You've Successfully ordered the $course course with the period of $length with the location of $location for $cost</br>
+							Thanks for doing business with us!</p>";
 					}
 				} else {
 					$result = mysqli_query($conn, $insert_query);
@@ -220,7 +225,7 @@ if (isset ($_POST["submit"])) {
 else {
 	header("location:enquire.php");
 }
-
 ?>
+</section>
 </body>
 </html>
