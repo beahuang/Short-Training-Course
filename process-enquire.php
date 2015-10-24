@@ -26,18 +26,12 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	if (isset ($_POST["course"])) {
 		$course = $_POST["course"];
 	}
-
-	$location = "";
-	if (isset ($_POST["Online"])) $tour = "Online";
-	if (isset ($_POST["University"])) $tour = "University";
-
-	$length = "";
-	if (isset ($_POST["5 days"])) $tour = "5 days";
-	if (isset ($_POST["10 days"])) $tour = "10 days";
-	if (isset ($_POST["3 weeks"])) $tour = "3 weeks";
-	if (isset ($_POST["5 weeks"])) $tour = "5 weeks";
-	if (isset ($_POST["10 weeks"])) $tour = "10 weeks";
-
+	if (isset ($_POST["location"])) {
+		$location = $_POST["location"];
+	}
+	if (isset ($_POST["length"])) {
+		$length = $_POST["length"];
+	}
 	if (isset ($_POST["seats"])) {
 		$seats = $_POST["seats"];
 	}
@@ -84,8 +78,8 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	if ($email=="") {
 		$errMsg .= "<p>You must enter your email.</p>";
 	}
-	if (!preg_match("/[a-zA-Z]{1,25}/",$email)) {
-		$errMsg .= "<p>Maximum of 25 characters, alphabetical only for your first name.</p>";
+	if (!preg_match("/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/",$email)) {
+		$errMsg .= "<p>You must enter a valid email.</p>";
 	}
 
 	if ($streetaddress=="") {
