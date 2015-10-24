@@ -46,7 +46,7 @@ $cardexpiry = sanitise_input($_POST["cardexpiry"]);
 
 if (isset ($_POST["submit"])) {
 	$errMsg = "";
-	if (!preg_match("/[a-zA-Z]{1,25}/",$bname)) {
+	if (!preg_match("/[a-zA-Z]{1,25}/",$bname) && ($bname != "")) {
 		$errMsg .= "<p>Maximum of 30 characters, alphabetical only for your billing name.</p>";
 	}
 
@@ -130,17 +130,17 @@ if (isset ($_POST["submit"])) {
 		$errMsg = "";
 		switch ($cardtype) {
 			case "Visa":
-			if (!preg_match("/4[0-9]{15}/g",$number)) {
+			if (!preg_match("/4[0-9]{15}/",$number)) {
 				$errMsg = "Visa cards have 16 digits and start with a 4";
 			}
 			break;
 			case "Mastercard":
-			if (!preg_match("/5[1-5][0-9]{14}/g",$number)) {
+			if (!preg_match("/5[1-5][0-9]{14}/",$number)) {
 				$errMsg = "MasterCard have 16 digits and start with digits 51 through to 55";
 			}
 			break;
 			case "American Express":
-			if (!preg_match("/3[47][0-9]{13}/g",$number)) {
+			if (!preg_match("/3[47][0-9]{13}/",$number)) {
 				$errMsg = "American Express has 15 digits and starts with 34 or 37";
 			}
 			break;
