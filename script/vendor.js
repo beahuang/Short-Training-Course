@@ -11,6 +11,8 @@
 // initial function call
 function init () {
 	var radio = document.getElementById("orderfield");
+	var orderbyName = document.getElementById("name");
+	var orderbyProduct = document.getElementById("product");
 	radio.addEventListener("click", function(){
 		if (orderbyName.checked) {
 			document.getElementById("nameKey").className = "";
