@@ -30,11 +30,12 @@
 			$_SESSION["vendorQuery"] = "";
 		break;
 		case: "status"
-			$_SESSION["vendorQueryBy"] = "";
-			$_SESSION["vendorQuery"] = "";
+			$_SESSION["vendorQueryBy"] = "order_status";
 		break;
 		case: "cost"
 			$_SESSION["vendorQueryBy"] = "cost";
 		break;
 	}
+
+	header("location:vendor.php");
 ?>
