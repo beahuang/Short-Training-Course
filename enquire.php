@@ -111,7 +111,7 @@
 					<textarea id="comment" name="comment" rows="4" cols="40" placeholder="Write description of your comment here..."></textarea>
 				</p>
 			</fieldset>
-			<input type="submit" name="submit" value="Register"/>
+			<input type="submit" name="submit" value="Submit Form"/>
 			<input type="reset" value="Reset Form"/>
 		</form>
 	</section>

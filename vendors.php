@@ -14,6 +14,7 @@
 	<meta name="keywords" content="short, training, course, short training course" />
 	<meta name="author" content="Beatrice Huang" />
 	<link rel="stylesheet" href="styles/style.css"/>
+	<script type="text/javascript" src="script/vendor.js"></script>
 	<title>Short Training Course</title>
 </head>
 <body class="vendor">
@@ -23,11 +24,7 @@
 	</header>
 	<form class="container" id="vendor" method="post" action="vendorquery.php" novalidate>
 		<fieldset>
-			<legend>Table Queries</legend>
-			<p>
-				<label for="orderKeyword">Keyword</label>
-				<input type="text" name= "orderKeyword" id="orderKeyword" placeholder="John, Course Name"/>
-			</p>
+			<legend>Order By</legend>
 			<p class="radio">
 				<strong for="order">Order By:</strong>
 				<label for="all">All</label>
@@ -41,8 +38,51 @@
 				<label for="cost">Cost</label>
 				<input type="radio" id="cost" name="orderType" value="cost"/>
 			</p>
+			<p>
+				<label for="orderName">Keyword</label>
+				<input type="text" name= "orderName" id="orderName" placeholder="John"/>
+			</p>
+			<p>
+				<label for="orderProduct">Keyword</label>
+				<input type="text" name= "orderProduct" id="orderProduct" placeholder="Course Name"/>
+			</p>
 		</fieldset>
-		<input type="submit" name="submit" value="Register"/>
+		<fieldset>
+			<legend>Update Status</legend>
+			<p class="radio">
+				<strong>Update an Order:</strong>
+				<input type="checkbox" id="showUpdateOrder" value="showUpdateOrder"/>
+			</p>
+			<span id="hiddenUpdateStatus" class="hidden">
+				<p>
+					<label for="updateOrderNumber">Input Order ID to Update</label>
+					<input type="text" name= "updateOrderNumber" id="updateOrderNumber" placeholder="1"/>
+				</p>
+				<p>
+					<label for="orderStatus">Order Status:</label>
+					<select name="orderStatus" id="orderStatus">
+						<option value="">Please Select</option>
+						<option value="PENDING">Pending</option>
+						<option value="FUFILLED">Fufilled</option>
+						<option value="PAID">Paid</option>
+					</select>
+				</p>
+			</span>
+		</fieldset>
+		<fieldset>
+			<legend>Delete Order</legend>
+			<p class="radio">
+				<strong>Delete an Order</strong>
+				<input type="checkbox" id="showDeleteOrder" value="showDeleteOrder"/>
+			</p>
+			<span id="hiddenDelete" class="hidden">
+				<p>
+					<label for="deleteOrderNumber">Input Order ID to Delete</label>
+					<input type="text" name= "deleteOrderNumber" id="deleteOrderNumber" placeholder="1"/>
+				</p>
+			</span>
+		</fieldset>
+		<input type="submit" name="submit" value="Submit"/>
 	</form>
 	<?php
 	require_once ("settings.php");

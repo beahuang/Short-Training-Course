@@ -14,7 +14,6 @@ function cancelPayment(){
 
 // initial function call
 function init () {
-	getDetails();
 	var cancelButton = document.getElementById("cancelButton");
 	cancelButton.addEventListener("click", cancelPayment);
 
