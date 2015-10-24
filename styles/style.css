@@ -1,0 +1,320 @@
+/*
+filename: Beatrice Huang
+author: Beatrice Huang
+created: 01/09/15
+last modified: 2/09/15
+description: styling for assignment 1 project all html files: index, about,
+			 enhancements, enquire, product
+*/
+
+/*General Styling*/
+body {
+	margin: 0;
+	font-family: Myriad Pro, Calibri, Sans-Serif;
+	padding-top: 49px; /*Padding to account for fixed NAV*/
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	display: block;
+}
+video {
+	margin: 10px 0;
+	width: 60%;
+	min-width: 300px;
+}
+section {
+	padding: 40px 20px;
+}
+.calign {
+	text-align: center;
+}
+.lalign {
+	text-align: left;
+}
+.lfloat {
+	float: left;
+}
+.hidden {
+	opacity: 0;
+	position: absolute;
+	z-index: -999;
+}
+img {
+	width: 100%; /*This is to make sure that no image will be coming out of its container*/
+}
+
+/*Typography Styles */
+h1 {
+	font-size: 3em;
+	letter-spacing: 0.2em;
+	line-height: 1.3em;
+}
+h2 {
+	margin: 0 0 0.5em;
+	font-size: 2em;
+}
+h3 {
+	margin: 0 0 0.5em;
+}
+p {
+	margin: 0;
+}
+em {
+	color: #607D8B;
+}
+.small-text {
+	font-size: 0.7em;
+}
+a {
+	text-decoration: none;
+	color: #727272;
+}
+a.link {
+	position: relative;
+}
+a.link:before {
+	content: "";
+	height: 2px;
+	width: 0;
+	background-color: #00BCD4;
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	transition: width 0.5s; /*transition property for the after element underline*/
+	-webkit-transition: width 0.5s;
+}
+a.link:hover:before {
+	width: 102%;
+}
+a.link:after {
+	content: "►";
+	font-size: 0.5em;
+	position: absolute;
+	right: -13px;
+	top: 3px;
+}
+h2 a.link:after {
+	top: 10px;
+	top: 8px;
+	right: -20px;
+}
+
+/*Navigation Menu Styling*/
+nav {
+	box-shadow: 0 1px 2px black;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+nav ul {
+	list-style: none;
+	background-color: #455A64;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+nav ul li {
+	display: inline-block;
+}
+nav ul li a:hover, nav ul li.active a{
+	background-color: #00BCD4;
+	transition: background-color 0.5s;
+	-webkit-transition: background-color 0.5s;
+}
+nav ul li a {
+	display: block;
+	padding: 15px 40px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: white;
+}
+
+/*Banner*/
+header {
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+#big-banner {
+	background: url("images/cover.jpg"), no-repeat, center, center;
+	background-size: cover;
+	min-height: 400px;
+	height: 40vh;
+	border-bottom: 4px solid #B6B6B6;
+}
+#big-banner h1 {
+	margin: 0;
+	padding-top: 140px;
+}
+.banner {
+	background-color: #3F51B5;
+	padding: 80px 0;
+	border-bottom: 4px solid #B6B6B6;
+}
+.banner h2 {
+	letter-spacing: 0.05em;
+	font-size: 2.4em;
+}
+.small-banner {
+	padding: 50px 0;
+	background-color: #00796B;
+	border-bottom: 4px solid #B6B6B6;
+}
+.small-banner h3 {
+	margin-bottom: 0;
+	font-size: 2em;
+}
+
+/*Product*/
+.product .imgwrapper {
+	width: 55%;
+	display: inline-block;
+	padding-bottom: 20px;
+}
+.product .imgwrapper img {
+	width: 95%;
+	margin: 0 auto;
+	display: block;
+}
+.product aside {
+	width: 44%;
+	display: inline-block;
+	vertical-align: top;
+}
+.product p {
+	margin-bottom: 20px;
+}
+.product section {
+	padding: 20px 0;
+	border-bottom: 2px solid #B6B6B6;
+}
+.product section h2 {
+	margin-bottom: 0;
+}
+.product section:last-of-type {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+/*About*/
+.about .ralign {
+	text-align: right;
+	font-family: Arial, Sans-Serif;
+}
+.about .course {
+	color: rgb(0, 188, 212);
+}
+.about .image-wrapper{
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}
+.about .image-wrapper img {
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+	padding: 20px;
+	border: 5px groove #00BCD4;
+}
+.about .text-wrapper{
+	width: 55%;
+	padding: 0 2%;
+	display: inline-block;
+}
+.about aside {
+	background-color: #CFD8DC;
+	padding: 30px;
+	border: 1px solid #727272;
+}
+.about aside img {
+	width: 100%;
+	padding: 20px 0;
+}
+table {
+	margin: 0 auto;
+	border-left: 1px solid #455A64;
+	border-top: 1px solid #455A64;
+	border-spacing: 0;
+	width: 90%;
+	text-align: center;
+}
+table th, td {
+	border-right: 1px solid #455A64;
+	border-bottom: 1px solid #455A64;
+	padding: 8px;
+	color: #FFF;
+}
+table th,
+table td:first-of-type  {
+	background-color: #607D8B;
+}
+td.cs1 {
+	background-color: #03A9F4;
+}
+td.cs2 {
+	background-color: #0288D1;
+}
+td.des2 {
+	background-color: #4CAF50;
+}
+td.photo1 {
+	background-color: #C2185B;
+}
+td.photo2 {
+	background-color: #E91E63;
+}
+td.des {
+	background-color: #303F9F;
+}
+
+.vendor table {
+	margin: 40px auto;
+	overflow-x: scroll;
+	display: block;
+	max-width: 800px;
+}
+.vendor table th,
+.vendor table td {
+	color: #000;
+	font-size: 0.8em;
+}
+.vendor table th,
+.vendor table td:first-of-type  {
+	color: #FFF;
+}
+
+/*Form*/
+form legend {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: bold;
+}
+form fieldset {
+	padding: 10px 20px;
+	margin: 20px 0;
+}
+form p:not(.radio) label {
+	font-weight: bold;
+}
+form p {
+	margin: 10px;
+}
+form textarea {
+	width: 80%;
+	margin-top: 5px;
+}
+
+/*Enhancements*/
+.enhancement li {
+	margin: 5px 0;
+}
+
+/*Footer*/
+footer {
+	padding: 20px;
+	background-color: #CFD8DC;
+	border-top: 4px solid #B6B6B6;
+}
