@@ -11,6 +11,7 @@
 	<title>Process Order</title>
 </head>
 <body>
+<?php include("includes/nav.php"); ?>
 <header class="small-banner">
 	<h3 class="container">Processing Order</h3>
 </header>
@@ -218,7 +219,7 @@ if (isset ($_POST["submit"])) {
 						echo "<p class='wrong'>Something is wrong with ", $insert_query, "</p>";
 					} else {
 						echo "<h3>Congratulations $firstname $lastname!</h3></br>
-							<p>You've Successfully ordered the $course course with the period of $length with the location of $location for $cost</br>
+							<p>You have successfully ordered the $course course for the period of $length with the location of $location for \$$cost</br>
 							Thanks for doing business with us!</p>";
 					}
 				}
@@ -231,5 +232,6 @@ else {
 }
 ?>
 </section>
+<?php include("includes/footer.php"); ?>
 </body>
 </html>
