@@ -18,21 +18,21 @@
 	echo "$orderType $nameKey $productKey $updateOrderNumber $updateOrderStatus $deleteOrderNumber";
 
 	switch ($orderType) {
-		case: "all"
+		case "all":
 			$_SESSION["vendorQueryBy"] = "order_id";
 		break;
-		case: "name"
+		case "name":
 			$_SESSION["vendorQueryBy"] = "";
 			$_SESSION["vendorQuery"] = "";
 		break;
-		case: "product"
+		case "product":
 			$_SESSION["vendorQueryBy"] = "";
 			$_SESSION["vendorQuery"] = "";
 		break;
-		case: "status"
+		case "status":
 			$_SESSION["vendorQueryBy"] = "order_status";
 		break;
-		case: "cost"
+		case "cost":
 			$_SESSION["vendorQueryBy"] = "cost";
 		break;
 	}
