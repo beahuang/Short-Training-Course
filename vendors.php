@@ -23,7 +23,7 @@
 		<h3 class='container'>Processing Order</h3>
 	</header>
 	<form class="container" id="vendor" method="post" action="vendorquery.php" novalidate>
-		<fieldset>
+		<fieldset id="orderfield">
 			<legend>Order By</legend>
 			<p class="radio">
 				<strong for="order">Order By:</strong>
