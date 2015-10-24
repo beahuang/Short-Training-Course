@@ -149,7 +149,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 			}
 			break;
 			default:
-			$errMsg = "Please choose a state"
+			$errMsg = "Please choose a state";
 		}
 		return $errMsg;
 	}
