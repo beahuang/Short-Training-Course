@@ -10,6 +10,23 @@
 
 // initial function call
 function init () {
+	var orderbyName = document.getElementById("name");
+	orderbyName.addEventListener("click", function(){
+		if (orderbyName.checked) {
+			document.getElementById("nameKey").className = "";
+		} else {
+			document.getElementById("nameKey").className = "hidden";
+		}
+	})
+	var orderbyProduct = document.getElementById("product");
+	orderbyProduct.addEventListener("click", function(){
+		if (orderbyProduct.checked) {
+			document.getElementById("productKey").className = "";
+		} else {
+			document.getElementById("productKey").className = "hidden";
+		}
+	})
+
 	var orderStatus = document.getElementById("showUpdateOrder");
 	orderStatus.addEventListener("click", function(){
 		if (orderStatus.checked) {

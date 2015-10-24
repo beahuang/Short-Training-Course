@@ -28,7 +28,7 @@
 			<p class="radio">
 				<strong for="order">Order By:</strong>
 				<label for="all">All</label>
-				<input type="radio" id="all" name="orderType" value="all"/>
+				<input type="radio" id="all" name="orderType" value="all" checked="checked" />
 				<label for="name">Name</label>
 				<input type="radio" id="name" name="orderType" value="name"/>
 				<label for="product">Product</label>
@@ -38,12 +38,12 @@
 				<label for="cost">Cost</label>
 				<input type="radio" id="cost" name="orderType" value="cost"/>
 			</p>
-			<p>
-				<label for="orderName">Keyword</label>
+			<p id="nameKey">
+				<label for="orderName">Keyword:</label>
 				<input type="text" name= "orderName" id="orderName" placeholder="John"/>
 			</p>
-			<p>
-				<label for="orderProduct">Keyword</label>
+			<p id="productKey">
+				<label for="orderProduct">Keyword:</label>
 				<input type="text" name= "orderProduct" id="orderProduct" placeholder="Course Name"/>
 			</p>
 		</fieldset>
