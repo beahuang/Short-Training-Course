@@ -9,8 +9,8 @@
 	}
 
 	$orderType = sanitise_input($_POST["orderType"]);
-	$nameKey = sanitise_input($_POST["name"]);
-	$productKey = sanitise_input($_POST["product"]);
+	$nameKey = sanitise_input($_POST["orderName"]);
+	$productKey = sanitise_input($_POST["orderProduct"]);
 	$updateOrderNumber = sanitise_input($_POST["updateOrderNumber"]);
 	$updateOrderStatus = sanitise_input($_POST["orderStatus"]);
 	$deleteOrderNumber = sanitise_input($_POST["deleteOrderNumber"]);
