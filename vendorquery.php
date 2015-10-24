@@ -16,4 +16,25 @@
 	$deleteOrderNumber = sanitise_input($_POST["deleteOrderNumber"]);
 
 	echo "$orderType $nameKey $productKey $updateOrderNumber $updateOrderStatus $deleteOrderNumber";
+
+	switch ($orderType) {
+		case: "all"
+			$_SESSION["vendorQueryBy"] = "order_id"
+		break;
+		case: "name"
+			$_SESSION["vendorQueryBy"] = "";
+			$_SESSION["vendorQuery"] = "";
+		break;
+		case: "product"
+			$_SESSION["vendorQueryBy"] = "";
+			$_SESSION["vendorQuery"] = "";
+		break;
+		case: "status"
+			$_SESSION["vendorQueryBy"] = "";
+			$_SESSION["vendorQuery"] = "";
+		break;
+		case: "cost"
+			$_SESSION["vendorQueryBy"] = "cost";
+		break;
+	}
 ?>
