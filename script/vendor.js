@@ -22,9 +22,9 @@ function init () {
 	var deleteOrder = document.getElementById("showDeleteOrder");
 	deleteOrder.addEventListener("click", function(){
 		if (deleteOrder.checked) {
-			document.getElementById("showDeleteOrder").className = "";
+			document.getElementById("hiddenDelete").className = "";
 		} else {
-			document.getElementById("showDeleteOrder").className = "hidden";
+			document.getElementById("hiddenDelete").className = "hidden";
 		}
 	})
  }
