@@ -1,5 +1,13 @@
 <?php
 	session_start();
+
+	function sanitise_input($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
 	$orderType = sanitise_input($_POST["orderType"]);
 	$nameKey = sanitise_input($_POST["name"]);
 	$productKey = sanitise_input($_POST["product"]);
