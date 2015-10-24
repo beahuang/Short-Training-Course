@@ -35,15 +35,24 @@ if (!$conn) {
 	$comments = $_SESSION["comments"];
 	$cost = $_SESSION["cost"];
 
-	$bname = trim($_POST["bfirstname"]);
-	$bstreetaddress = trim($_POST["bstreetaddress"]);
-	$bsuburb = trim($_POST["bsuburb"]);
-	$bstate = trim($_POST["bstate"]);
-	$bpostcode = trim($_POST["bpostcode"]);
-	$creditcard = trim($_POST["creditcard"]);
-	$creditname = trim($_POST["creditname"]);
-	$cardnumber = trim($_POST["cardnumber"]);
-	$cardexpiry = trim($_POST["cardexpiry"]);
+	function sanitise_input($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
+	$bname = sanitise_input($_POST["bfirstname"]);
+	$bstreetaddress = sanitise_input($_POST["bstreetaddress"]);
+	$bsuburb = sanitise_input($_POST["bsuburb"]);
+	$bstate = sanitise_input($_POST["bstate"]);
+	$bpostcode = sanitise_input($_POST["bpostcode"]);
+	$creditcard = sanitise_input($_POST["creditcard"]);
+	$creditname = sanitise_input($_POST["creditname"]);
+	$cardnumber = sanitise_input($_POST["cardnumber"]);
+	$cardexpiry = sanitise_input($_POST["cardexpiry"]);
+
+
 
 
 

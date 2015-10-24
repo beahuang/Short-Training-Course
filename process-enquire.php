@@ -1,63 +1,27 @@
 <?php
 session_start();
 
-if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
-	$firstname = $_POST["firstname"];
+function sanitise_input($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
 
-	if (isset ($_POST["lastname"])) {
-		$lastname = $_POST["lastname"];
-	}
-	if (isset ($_POST["email"])) {
-		$email = $_POST["email"];
-	}
-	if (isset ($_POST["streetaddress"])) {
-		$streetaddress = $_POST["streetaddress"];
-	}
-	if (isset ($_POST["suburb"])) {
-		$suburb = $_POST["suburb"];
-	}
-	if (isset ($_POST["state"])) {
-		$state = $_POST["state"];
-	}
-	if (isset ($_POST["postcode"])) {
-		$postcode = $_POST["postcode"];
-	}
-	if (isset ($_POST["phone"])) {
-		$phone = $_POST["phone"];
-	}
-	if (isset ($_POST["course"])) {
-		$course = $_POST["course"];
-	}
-	if (isset ($_POST["location"])) {
-		$location = $_POST["location"];
-	}
-	if (isset ($_POST["length"])) {
-		$length = $_POST["length"];
-	}
-	if (isset ($_POST["seats"])) {
-		$seats = $_POST["seats"];
-	}
-	if (isset ($_POST["comment"])) {
-		$comments = $_POST["comment"];
-	}
-
-	function sanitise_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-
-	$firstname = sanitise_input($firstname);
-	$lastname = sanitise_input($lastname);
-	$email = sanitise_input($email);
-	$streetaddress = sanitise_input($streetaddress);
-	$suburb = sanitise_input($suburb);
-	$state = sanitise_input($state);
-	$postcode = sanitise_input($postcode);
-	$phone = sanitise_input($phone);
-	$seats = sanitise_input($seats);
-	$comments = sanitise_input($comments);
+if (isset ($_POST["submit"]) {
+	$firstname = sanitise_input($_POST["firstname"]);
+	$lastname = sanitise_input($_POST["lastname"]);
+	$email = sanitise_input($_POST["email"]);
+	$streetaddress = sanitise_input($_POST["streetaddress"]);
+	$suburb = sanitise_input($_POST["suburb"]);
+	$state = sanitise_input($_POST["state"]);
+	$postcode = sanitise_input($_POST["postcode"]);
+	$phone = sanitise_input($_POST["phone"]);
+	$course = sanitise_input($_POST["course"]);
+	$location = sanitise_input($_POST["location"]);
+	$length = sanitise_input($_POST["length"]);
+	$seats = sanitise_input($_POST["seats"]);
+	$comments = sanitise_input($_POST["comment"]);
 
 	$errMsg = "";
 	if ($firstname=="") {

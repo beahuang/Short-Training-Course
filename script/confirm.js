@@ -140,43 +140,6 @@ function checkCardNumber(cardtype, number) {
 	return errMsg;
 }
 
-// gets the information from the session storage and fills in hidden fields to send to server
-function getDetails(){
-	var cost = 0;
-	if(sessionStorage.firstname != undefined){
-		document.getElementById("confirm_name").textContent = sessionStorage.firstname + " " + sessionStorage.lastname;
-		document.getElementById("confirm_email").textContent = sessionStorage.email;
-		document.getElementById("confirm_street").textContent = sessionStorage.street;
-		document.getElementById("confirm_suburb").textContent = sessionStorage.suburb;
-		document.getElementById("confirm_state").textContent = sessionStorage.state;
-		document.getElementById("confirm_postcode").textContent = sessionStorage.postcode;
-		document.getElementById("confirm_phone").textContent = sessionStorage.phone
-		document.getElementById("confirm_course").textContent = sessionStorage.course
-		document.getElementById("confirm_location").textContent = sessionStorage.clocation
-		document.getElementById("confirm_length").textContent = sessionStorage.clength
-		document.getElementById("confirm_seats").textContent = sessionStorage.seats
-		document.getElementById("confirm_comments").textContent = sessionStorage.comments
-		cost = calcCost(sessionStorage.clocation, sessionStorage.clength);
-		document.getElementById("confirm_cost").textContent = cost;
-
-		document.getElementById("firstname").value = sessionStorage.firstname
-		document.getElementById("lastname").value = sessionStorage.lastname
-		document.getElementById("email").value = sessionStorage.email
-		document.getElementById("streetAddress").value = sessionStorage.street
-		document.getElementById("suburb").value = sessionStorage.suburb
-		document.getElementById("state").value = sessionStorage.state
-		document.getElementById("postcode").value = sessionStorage.postcode
-		document.getElementById("phone").value = sessionStorage.phone
-		document.getElementById("course").value = sessionStorage.course
-		document.getElementById("location").value = sessionStorage.clocation
-		document.getElementById("length").value = sessionStorage.clength
-		document.getElementById("seats").value = sessionStorage.seats
-		document.getElementById("comments").value = sessionStorage.comments
-		document.getElementById("cost").value = sessionStorage.cost
-		document.getElementById("cost").value = cost;
-	}
-}
-
 // redirects when you click the cancel button
 function cancelPayment(){
 	window.location = "enquire.html";
