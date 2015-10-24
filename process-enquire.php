@@ -29,10 +29,18 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$course = $_POST["course"];
 	}
 	if (isset ($_POST["location"])) {
-		$location = $_POST["location"];
+		$location = "";
+		foreach ($_POST['location'] as $select)
+		{
+			$location . $select;
+		}
 	}
 	if (isset ($_POST["length"])) {
-		$length = $_POST["length"];
+		$length = "";
+		foreach ($_POST['length'] as $select)
+		{
+			$length . $select;
+		}
 	}
 	if (isset ($_POST["seats"])) {
 		$seats = $_POST["seats"];
