@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	 if (!isset ($_SESSION["vendorQueryBy"])) {
+	 	$_SESSION["vendorQueryBy"] = "order_id";
+	}
+
+	$$vendorQueryBy = $_SESSION["vendorQueryBy"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +17,34 @@
 	<title>Short Training Course</title>
 </head>
 <body class="vendor">
+	<?php include("includes/nav.php");?>
+	<header class='small-banner'>
+		<h3 class='container'>Processing Order</h3>
+	</header>
+	<form id="vendor" method="post" action="vendorquery.php" novalidate>
+		<fieldset>
+			<legend>Table Queries</legend>
+			<p>
+				<label for="orderKeyword">Keyword</label>
+				<input type="text" name= "orderKeyword" id="orderKeyword" placeholder="John, Course Name"/>
+			</p>
+			<p class="radio">
+				<strong for="order">Order By:</strong>
+				<label for="all">All</label>
+				<input type="radio" id="all" name="orderType" value="all"/>
+				<label for="name">Name</label>
+				<input type="radio" id="name" name="orderType" value="name"/>
+				<label for="product">Product</label>
+				<input type="radio" id="product" name="orderType" value="product"/>
+				<label for="status">Status</label>
+				<input type="radio" id="status" name="orderType" value="status"/>
+				<label for="cost">Cost</label>
+				<input type="radio" id="cost" name="orderType" value="cost"/>
+			</p>
+		</fieldset>
+		<input type="submit" name="submit" value="Register"/>
+	</form>
 	<?php
-	include("includes/nav.php");
 	require_once ("settings.php");
 	$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 
@@ -20,13 +54,11 @@
 	} else {
 
 	$sql_table="orders";
-
-	$query = "select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY order_id";
-
-	$result = mysqli_query($conn, $query);
+	$vendorQuery="select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY $vendorQueryBy";
+	$result = mysqli_query($conn, $vendorQueryBy);
 
 	if(!$result) {
-	echo "<p>Something is wrong with ", $query, "</p>";
+	echo "<p>Something is wrong with ", $vendorQueryBy, "</p>";
 	} else {
 
 	echo "<table border=\"1\">";

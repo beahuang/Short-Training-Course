@@ -218,9 +218,9 @@ if (isset ($_POST["submit"])) {
 					if(!$result) {
 						echo "<p class='wrong'>Something is wrong with ", $insert_query, "</p>";
 					} else {
-						echo "<h3>Congratulations $firstname $lastname!</h3></br>
-							<p>You have successfully ordered the $course course for the period of $length with the location of $location for \$$cost</br>
-							Thanks for doing business with us!</p>";
+						echo "<h2>Congratulations $firstname $lastname!</h2></br>
+							<p>You have successfully ordered the $course course for the period of $length with the location of $location for \$$cost</p>
+							<h3>Thanks for doing business with us!</h3>";
 					}
 				}
 		mysqli_close($conn);
