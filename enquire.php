@@ -45,14 +45,14 @@
 					<label for="state">State:</label>
 					<select name="state" id="state" required="required">
 						<option value="">Please Select</option>
-						<option value="vic">VIC</option>
-						<option value="nsw">NSW</option>
-						<option value="qld">QLD</option>
-						<option value="nt">NT</option>
-						<option value="wa">WA</option>
-						<option value="sa">SA</option>
-						<option value="tas">TAS</option>
-						<option value="act">ACT</option>
+						<option value="VIC">VIC</option>
+						<option value="NSQ">NSW</option>
+						<option value="QLD">QLD</option>
+						<option value="NT">NT</option>
+						<option value="WA">WA</option>
+						<option value="SA">SA</option>
+						<option value="TAS">TAS</option>
+						<option value="ACT">ACT</option>
 					</select>
 				</p>
 				<p>

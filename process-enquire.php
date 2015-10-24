@@ -93,10 +93,6 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$errMsg .= "<p>Maximum of 20 characters for your suburb.</p>";
 	}
 
-	if ($state=="") {
-		$errMsg .= "<p>You must enter a state.</p>";
-	}
-
 	if ($postcode=="") {
 		$errMsg .= "<p>You must enter your postcode.</p>";
 	}
