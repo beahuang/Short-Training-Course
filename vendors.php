@@ -4,7 +4,7 @@
 	 	$_SESSION["vendorQueryBy"] = "order_id";
 	}
 
-	$$vendorQueryBy = $_SESSION["vendorQueryBy"];
+	$vendorQueryBy = $_SESSION["vendorQueryBy"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
