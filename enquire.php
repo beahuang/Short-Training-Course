@@ -15,7 +15,7 @@
 		<h3 class="container">Find a course</h3>
 	</header>
 	<section class="container">
-		<form id="enquire" method="post" action="payment.php" novalidate>
+		<form id="enquire" method="post" action="process-enquire.php" novalidate>
 			<fieldset>
 				<legend>Personal Details</legend>
 				<p>
