@@ -1,5 +1,19 @@
 <?php
 	session_start();
+	$firstname = $_SESSION["firstname"]
+	$lastname = $_SESSION["lastname"]
+	$email = $_SESSION["email"]
+	$streetaddress = $_SESSION["streetAddress"]
+	$suburb = $_SESSION["suburb"]
+	$state = $_SESSION["state"]
+	$postcode = $_SESSION["postcode"]
+	$phone = $_SESSION["phone"]
+	$course = $_SESSION["course"]
+	$location = $_SESSION["location"]
+	$length = $_SESSION["length"]
+	$seats = $_SESSION["seats"]
+	$comments = $_SESSION["comments"]
+	$cost = $_SESSION["cost"]
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +35,7 @@
 		<form id="confirmform" method="post" action="addorder.php" novalidate>
 			<fieldset>
 				<legend>Customer Details</legend>
-				<p>Your Name: <?php echo '$_SESSION["firstname"] $_SESSION[",lastname"]'?></p>
+				<p>Your Name: <?php echo "$firstname $lastname"?></p>
 				<p>Email: <span id="confirm_email"></span></p>
 				<p>Street Address: <span id="confirm_street"></span></p>
 				<p>Suburb: <span  id="confirm_suburb"></span></p>
