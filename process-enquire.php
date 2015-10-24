@@ -54,9 +54,6 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	$state = sanitise_input($state);
 	$postcode = sanitise_input($postcode);
 	$phone = sanitise_input($phone);
-	$course = sanitise_input($course);
-	$location = sanitise_input($location);
-	$length = sanitise_input($length);
 	$seats = sanitise_input($seats);
 	$comments = sanitise_input($comments);
 
@@ -115,14 +112,6 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	}
 	if (!is_numeric($phone)) {
 		$errMsg .= "<p>You must enter a number for your phone number.</p>";
-	}
-
-	if ($course=="") {
-		$errMsg .= "<p>You must choose a course.</p>";
-	}
-
-	if ($location=="") {
-		$errMsg .= "<p>You must choose a location.</p>";
 	}
 
 	if ($length=="") {
