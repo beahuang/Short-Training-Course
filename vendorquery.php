@@ -37,5 +37,5 @@
 		break;
 	}
 
-	header("location:vendor.php");
+	header("location:vendors.php");
 ?>
