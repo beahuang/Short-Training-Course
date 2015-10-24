@@ -3,11 +3,11 @@
 	 if (!isset ($_SESSION["vendorQueryBy"])) {
 	 	$_SESSION["vendorQueryBy"] = "order_id";
 	}
+	$vendorQueryBy = $_SESSION["vendorQueryBy"];
 	 if (!isset ($_SESSION["vendorQuery"])) {
 	 	$_SESSION["vendorQuery"] = "select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY $vendorQueryBy";
 	}
 	$vendorQuery = $_SESSION["vendorQuery"];
-	$vendorQueryBy = $_SESSION["vendorQueryBy"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
