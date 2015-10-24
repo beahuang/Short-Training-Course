@@ -25,10 +25,10 @@
 			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE firstname='$firstNameKey' AND lastname='$lastNameKey'";
 		break;
 		case "product":
-			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE course=$'productKey'";
+			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE course='$productKey'";
 		break;
 		case "status":
-			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE order_status=$'order_status'";
+			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE order_status='$order_status'";
 		break;
 		case "cost":
 			$_SESSION["vendorQuery"] = "SELECT * FROM orders ORDER BY cost";
@@ -40,7 +40,7 @@
 	}
 
 	if (is_numeric($updateOrderNumber) && ($updateOrderStatus != "")) {
-		$_SESSION["updateQuery"] = "UPDATE orders SET order_status=$'updateOrderStatus' WHERE order_id=$updateOrderNumber";
+		$_SESSION["updateQuery"] = "UPDATE orders SET order_status='$updateOrderStatus' WHERE order_id=$updateOrderNumber";
 	}
 
 	header("location:vendors.php");
