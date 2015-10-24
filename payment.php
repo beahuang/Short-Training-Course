@@ -21,7 +21,7 @@
 		<form id="confirmform" method="post" action="addorder.php" novalidate>
 			<fieldset>
 				<legend>Customer Details</legend>
-				<p>Your Name: <?php $firstname $lastname?></p>
+				<p>Your Name: <?php echo "$firstname $lastname"?></p>
 				<p>Email: <span id="confirm_email"></span></p>
 				<p>Street Address: <span id="confirm_street"></span></p>
 				<p>Suburb: <span  id="confirm_suburb"></span></p>
