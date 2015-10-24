@@ -3,8 +3,16 @@
 	 if (!isset ($_SESSION["vendorQuery"])) {
 	 	$_SESSION["vendorQuery"] = "select * FROM orders";
 	}
+	 if (!isset ($_SESSION["deleteQuery"])) {
+	 	$_SESSION["deleteQuery"] = "";
+	}
+	 if (!isset ($_SESSION["updateQuery"])) {
+	 	$_SESSION["updateQuery"] = "";
+	}
 
 	$vendorQuery = $_SESSION["vendorQuery"];
+	$deleteQuery = $_SESSION["deleteQuery"];
+	$updateQuery = $_SESSION["updateQuery"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,12 +47,18 @@
 				<input type="radio" id="cost" name="orderType" value="cost"/>
 			</p>
 			<p id="nameKey" class="hidden">
-				<label for="orderName">Keyword:</label>
-				<input type="text" name= "orderName" id="orderName" placeholder="John"/>
+				<label for="orderName">First Name:</label>
+				<input type="text" name= "firstNameKey" id="firstNameKey" placeholder="John"/>
+				<label for="orderName">Last Name:</label>
+				<input type="text" name= "lastNameKey" id="lastNameKey" placeholder="John"/>
 			</p>
 			<p id="productKey" class="hidden">
 				<label for="orderProduct">Keyword:</label>
 				<input type="text" name= "orderProduct" id="orderProduct" placeholder="Course Name"/>
+			</p>
+			<p id="statusKey" class="hidden">
+				<label for="orderStatusKey">Keyword:</label>
+				<input type="text" name= "orderStatusKey" id="orderStatusKey" placeholder="Course Name"/>
 			</p>
 		</fieldset>
 		<fieldset>
@@ -94,11 +108,16 @@
 	} else {
 
 	$sql_table="orders";
-	// $vendorQuery="select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY order_id";
+	if ($updateQuery != "" ) {
+		mysqli_query($conn, $updateQuery);
+	}
+	if ($deleteQuery != "" ) {
+		mysqli_query($conn, $deleteQuery);
+	}
 	$result = mysqli_query($conn, $vendorQuery);
 
 	if(!$result) {
-	echo "<p>Something is wrong with ", $vendorQuery, "</p>";
+	echo "<p class='container'>Something is wrong with ", $vendorQuery, "</p>";
 	} else {
 
 	echo "<table border=\"1\">";

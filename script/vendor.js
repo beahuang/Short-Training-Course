@@ -13,18 +13,27 @@ function init () {
 	var radio = document.getElementById("orderfield");
 	var orderbyName = document.getElementById("name");
 	var orderbyProduct = document.getElementById("product");
+	var orderbyStatus = document.getElementById("status");
 	radio.addEventListener("click", function(){
 		if (orderbyName.checked) {
 			document.getElementById("nameKey").className = "";
 			document.getElementById("productKey").className = "hidden";
+			document.getElementById("statusKey").className = "hidden";
 		}
-		else if (orderbyProduct.checked){
+		if (orderbyProduct.checked){
 			document.getElementById("productKey").className = "";
 			document.getElementById("nameKey").className = "hidden";
+			document.getElementById("statusKey").className = "hidden";
+		}
+		if (orderbyStatus.checked){
+			document.getElementById("productKey").className = "hidden";
+			document.getElementById("nameKey").className = "hidden";
+			document.getElementById("statusKey").className = "";
 		}
 		else {
 			document.getElementById("productKey").className = "hidden";
 			document.getElementById("nameKey").className = "hidden";
+			document.getElementById("statusKey").className = "hidden";
 		}
 
 	});
