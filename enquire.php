@@ -6,7 +6,7 @@
 	<meta name="keywords" content="short, training, course, short training course" />
 	<meta name="author" content="Beatrice Huang" />
 	<link rel="stylesheet" href="styles/style.css"/>
-	<!-- <script type="text/javascript" src="script/validate.js"></script> -->
+	<script type="text/javascript" src="script/validate.js"></script>
 	<title>Short Training Course</title>
 </head>
 <body>
