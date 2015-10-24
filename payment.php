@@ -1,19 +1,19 @@
 <?php
 	session_start();
-	$firstname = $_SESSION["firstname"]
-	$lastname = $_SESSION["lastname"]
-	$email = $_SESSION["email"]
-	$streetaddress = $_SESSION["streetAddress"]
-	$suburb = $_SESSION["suburb"]
-	$state = $_SESSION["state"]
-	$postcode = $_SESSION["postcode"]
-	$phone = $_SESSION["phone"]
-	$course = $_SESSION["course"]
-	$location = $_SESSION["location"]
-	$length = $_SESSION["length"]
-	$seats = $_SESSION["seats"]
-	$comments = $_SESSION["comments"]
-	$cost = $_SESSION["cost"]
+	$firstname = $_SESSION["firstname"];
+	$lastname = $_SESSION["lastname"];
+	$email = $_SESSION["email"];
+	$streetaddress = $_SESSION["streetAddress"];
+	$suburb = $_SESSION["suburb"];
+	$state = $_SESSION["state"];
+	$postcode = $_SESSION["postcode"];
+	$phone = $_SESSION["phone"];
+	$course = $_SESSION["course"];
+	$location = $_SESSION["location"];
+	$length = $_SESSION["length"];
+	$seats = $_SESSION["seats"];
+	$comments = $_SESSION["comments"];
+	$cost = $_SESSION["cost"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
