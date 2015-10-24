@@ -66,8 +66,7 @@ if (!$conn) {
  					'creditname' varchar(0)  NOT  NULL ,
  					'cardnumber' int(6)  NOT  NULL ,
  					'cardexpiry' varchar()  NOT  NULL ,
- 					'order_status' enum('PENDING',  'FUFILLED',  'PAID') DEFAULT  'PENDING',
- 					PRIMARY  KEY ('order_id'))";
+ 					'order_status' enum('PENDING',  'FUFILLED',  'PAID') DEFAULT  'PENDING')";
 
 	$insert_query = "insert into $sql_table (firstname, lastname,email,streetaddress,suburb,state,postcode,phone,course,location,length,seats,comments,cost,bname,bstreetaddress,bsuburb,bstate,bpostcode,creditcard,creditname,cardnumber,cardexpiry) values ('$firstname','$lastname','$email','$streetaddress','$suburb','$state','$postcode','$phone','$course','$location','$length','$seats','$comments','$cost','$bname','$bstreetaddress','$bsuburb','$bstate','$bpostcode','$creditcard','$creditname','$cardnumber','$cardexpiry')";
 
