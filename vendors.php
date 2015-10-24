@@ -16,12 +16,12 @@
 	<link rel="stylesheet" href="styles/style.css"/>
 	<title>Short Training Course</title>
 </head>
-<body class="vendor container">
+<body class="vendor">
 	<?php include("includes/nav.php");?>
 	<header class='small-banner'>
 		<h3 class='container'>Processing Order</h3>
 	</header>
-	<form id="vendor" method="post" action="vendorquery.php" novalidate>
+	<form class="container" id="vendor" method="post" action="vendorquery.php" novalidate>
 		<fieldset>
 			<legend>Table Queries</legend>
 			<p>
@@ -55,10 +55,10 @@
 
 	$sql_table="orders";
 	$vendorQuery="select order_id, orderdate, firstname, lastname, email, streetaddress, suburb, state, postcode, phone, course, location, length, seats, comments, cost, bname, bstreetaddress, bsuburb, bstate, bpostcode, creditcard, creditname, cardnumber, cardexpiry, order_status FROM orders ORDER BY $vendorQueryBy";
-	$result = mysqli_query($conn, $vendorQueryBy);
+	$result = mysqli_query($conn, $vendorQuery);
 
 	if(!$result) {
-	echo "<p>Something is wrong with ", $vendorQueryBy, "</p>";
+	echo "<p>Something is wrong with ", $vendorQuery, "</p>";
 	} else {
 
 	echo "<table border=\"1\">";
