@@ -100,7 +100,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		$errMsg .= "<p>Exactly four digits for your postcode.</p>";
 	}
 	function checkPostcode($state, $postcode) {
-		$errMsg = "whyy";
+		$errMsg = "";
 		switch ($state) {
 			case "VIC":
 			if (!preg_match("/^[3,8].*$/",$postcode)) {
