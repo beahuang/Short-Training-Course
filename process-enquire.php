@@ -98,7 +98,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	if ($suburb=="") {
 		$errMsg .= "<p>You must enter your suburb.</p>";
 	}
-	if (!preg_match(".{1,20}",$suburb)) {
+	if (!preg_match("/.{1,20}/",$suburb)) {
 		$errMsg .= "<p>Maximum of 20 characters for your suburb.</p>";
 	}
 
