@@ -10,7 +10,7 @@
 
 // initial function call
 function init () {
-	var radio = document.getElementById("orderField");
+	var radio = document.getElementById("orderfield");
 	radio.addEventListener("click", function(){
 		if (orderbyName.checked) {
 			document.getElementById("nameKey").className = "";
