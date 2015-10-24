@@ -19,26 +19,6 @@ function validate(){
 	var bstate = document.getElementById("bstate").value;
 	var bpostcode = document.getElementById("bpostcode").value;
 
-	var tempMsg = checkExpiry(cardexpiry);
-	if (tempMsg != "") {
-		errMsg = errMsg + tempMsg + "\n";
-		result = false;
-	}
-
-	var tempMsg2 = checkCardNumber(creditcard,cardnumber);
-	if (tempMsg2 != "") {
-		errMsg = errMsg + tempMsg2 + "\n";
-		result = false;
-	}
-
-	if (document.getElementsByClassName("hidden").length == 0) {
-		var tempMsg3 = checkPostcode(bstate, bpostcode);
-		if (tempMsg3 != "") {
-			errMsg = errMsg + tempMsg3 + "\n";
-			result = false;
-		}
-	}
-
 	if (errMsg != "") {
 		alert(errMsg);
 	}
