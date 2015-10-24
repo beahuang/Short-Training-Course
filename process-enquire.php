@@ -75,7 +75,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 	if ($email=="") {
 		$errMsg .= "<p>You must enter your email.</p>";
 	}
-	if (!preg_match("/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/",$email)) {
+	if (!preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/",$email)) {
 		$errMsg .= "<p>You must enter a valid email.</p>";
 	}
 
