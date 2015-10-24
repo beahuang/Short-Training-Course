@@ -28,7 +28,7 @@
 			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE course='$productKey'";
 		break;
 		case "status":
-			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE order_status='$order_status'";
+			$_SESSION["vendorQuery"] = "SELECT * FROM orders WHERE order_status='$statusKey'";
 		break;
 		case "cost":
 			$_SESSION["vendorQuery"] = "SELECT * FROM orders ORDER BY cost";
