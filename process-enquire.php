@@ -8,7 +8,7 @@ function sanitise_input($data) {
 	return $data;
 }
 
-if (isset ($_POST["submit"]) {
+if (isset ($_POST["submit"])) {
 	$firstname = sanitise_input($_POST["firstname"]);
 	$lastname = sanitise_input($_POST["lastname"]);
 	$email = sanitise_input($_POST["email"]);
