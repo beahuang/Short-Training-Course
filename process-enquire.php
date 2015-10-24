@@ -176,7 +176,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 			case "5 days":
 			return 100 * 5;
 			case "10 days":
-			return 100 * 10
+			return 100 * 10;
 			case "3 weeks":
 			return 100 * 21;
 			case "5 weeks":
@@ -184,7 +184,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 			case "10 weeks":
 			return 100 * 70;
 			default:
-			return "0"
+			return "0";
 		}
 	}
 
