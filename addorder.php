@@ -8,13 +8,14 @@
 <body>
 	<h1>Processing Order</h1>
 <?php
-	require_once ("settings.php");
-	$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
+require_once ("settings.php");
+$conn = @mysqli_connect($host,$user,$pwd,$sql_db);
 
-	if (!$conn) {
+if (!$conn) {
 	echo "<p>Database connection failure</p>";
 } else {
 	$sql_table="orders";
+
 	$firstname = trim($_POST["firstname"]);
 	$lastname = trim($_POST["lastname"]);
 	$email = trim($_POST["email"]);
@@ -39,16 +40,57 @@
 	$cardnumber = trim($_POST["cardnumber"]);
 	$cardexpiry = trim($_POST["cardexpiry"]);
 
+	$create_table = "CREATE TABLE IF NOT EXISTS orders(
+					'order_id' int(11)  NOT  NULL  AUTO_INCREMENT,
+ 					'orderdate' timestamp NOT  NULL  DEFAULT CURRENT_TIMESTAMP,
+ 					'firstname' varchar(5)  NOT  NULL,
+ 					'lastname' varchar(5)  NOT  NULL ,
+ 					'email' varchar(55)  NOT  NULL ,
+ 					'streetaddress' varchar(0)  NOT  NULL ,
+ 					'suburb' varchar(0)  NOT  NULL ,
+ 					'state' enum('VIC',  'NSW',  'QLD',  'NT',  'WA',  'SA',  'TAS',  'ACT')  NOT  NULL ,
+ 					'postcode' int()  NOT  NULL ,
+ 					'phone' int(0)  NOT  NULL ,
+ 					'course' enum('Digital Photography',  'Microsoft Office',  'Interior Design',  'Photoshop',  'Wordpress',  'other')  NOT  NULL ,
+ 					'location' enum('Online',  'University',  '',  '')  NOT  NULL ,
+ 					'length' enum('5 days',  '10 days',  '3 weeks',  '5 weeks',  '10 weeks')  NOT  NULL ,
+ 					'seats' int()  NOT  NULL ,
+ 					'comments' varchar(55)  NOT  NULL ,
+ 					'cost' float NOT  NULL ,
+ 					'bname' varchar(0)  NOT  NULL ,
+ 					'bstreetaddress' varchar(0)  NOT  NULL ,
+ 					'bsuburb' varchar(0)  NOT  NULL ,
+ 					'bstate' enum('',  'VIC',  'NSW',  'QLD',  'NT',  'WA',  'SA',  'TAS',  'ACT',  '')  NOT  NULL DEFAULT  '',
+ 					'bpostcode' int()  NOT  NULL ,
+ 					'creditcard' enum('Visa',  'Mastercard',  'American Express')  NOT  NULL ,
+ 					'creditname' varchar(0)  NOT  NULL ,
+ 					'cardnumber' int(6)  NOT  NULL ,
+ 					'cardexpiry' varchar()  NOT  NULL ,
+ 					'order_status' enum('PENDING',  'FUFILLED',  'PAID') DEFAULT  'PENDING',
+ 					PRIMARY  KEY ('order_id'))";
 
-	$query = "insert into $sql_table (firstname, lastname,email,streetaddress,suburb,state,postcode,phone,course,location,length,seats,comments,cost,bname,bstreetaddress,bsuburb,bstate,bpostcode,creditcard,creditname,cardnumber,cardexpiry) values ('$firstname','$lastname','$email','$streetaddress','$suburb','$state','$postcode','$phone','$course','$location','$length','$seats','$comments','$cost','$bname','$bstreetaddress','$bsuburb','$bstate','$bpostcode','$creditcard','$creditname','$cardnumber','$cardexpiry')";
+	$insert_query = "insert into $sql_table (firstname, lastname,email,streetaddress,suburb,state,postcode,phone,course,location,length,seats,comments,cost,bname,bstreetaddress,bsuburb,bstate,bpostcode,creditcard,creditname,cardnumber,cardexpiry) values ('$firstname','$lastname','$email','$streetaddress','$suburb','$state','$postcode','$phone','$course','$location','$length','$seats','$comments','$cost','$bname','$bstreetaddress','$bsuburb','$bstate','$bpostcode','$creditcard','$creditname','$cardnumber','$cardexpiry')";
 
-	$result = mysqli_query($conn, $query);
+	$tableExistsQuery = "SELECT order_id FROM $sql_table";
+	$tableExists? = mysqli_query($dbConnection, $query);
 
-	if(!$result) {
-		echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
+	if(empty($tableExists?)) {
+		mysqli_query($dbConnection, $create_table);
+		$result = mysqli_query($conn, $insert_query);
+		if(!$result) {
+			echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
+		} else {
+			echo "<p class=\"ok\">Successfully added order</p>";
+		}
 	} else {
-		echo "<p class=\"ok\">Successfully added order</p>";
+		$result = mysqli_query($conn, $insert_query);
+		if(!$result) {
+			echo "<p class=\"wrong\">Something is wrong with ", $query, "</p>";
+		} else {
+			echo "<p class=\"ok\">Successfully added order</p>";
+		}
 	}
+
 mysqli_close($conn);
 }
 ?>
