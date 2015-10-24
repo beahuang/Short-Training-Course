@@ -36,37 +36,21 @@
 			<fieldset>
 				<legend>Customer Details</legend>
 				<p>Your Name: <?php echo "$firstname $lastname"?></p>
-				<p>Email: <span id="confirm_email"></span></p>
-				<p>Street Address: <span id="confirm_street"></span></p>
-				<p>Suburb: <span  id="confirm_suburb"></span></p>
-				<p>State: <span  id="confirm_state"></span></p>
-				<p>Postcode: <span  id="confirm_postcode"></span></p>
-				<p>Phone Number: <span  id="confirm_phone"></span></p>
+				<p>Email: <?php echo "$email" ?></p>
+				<p>Street Address: <?php echo "$streetaddress" ?></p>
+				<p>Suburb: <?php echo "$suburb" ?></p>
+				<p>State: <?php echo "$state" ?></p>
+				<p>Postcode: <?php echo "$postcode" ?></p>
+				<p>Phone Number: <?php echo "$phone" ?></p>
 			</fieldset>
 			<fieldset>
 				<legend>Course Details</legend>
-				<p>Course Study: <span  id="confirm_course"></span></p>
-				<p>Course Location: <span  id="confirm_location"></span></p>
-				<p>Course Length: <span  id="confirm_length"></span></p>
-				<p>Number of Seats: <span  id="confirm_seats"></span></p>
-				<p>Comments: <span  id="confirm_comments"></span></p>
-				<p>Total Cost: $<span  id="confirm_cost"></span></p>
-
-				<!--Create the other hidden input here  -->
-				<input type="hidden" name="firstname" id="firstname" />
-				<input type="hidden" name="lastname" id="lastname" />
-				<input type="hidden" name="email" id="email" />
-				<input type="hidden" name="streetAddress" id="streetAddress" />
-				<input type="hidden" name="suburb" id="suburb" />
-				<input type="hidden" name="state" id="state" />
-				<input type="hidden" name="phone" id="phone" />
-				<input type="hidden" name="postcode" id="postcode" />
-				<input type="hidden" name="course" id="course" />
-				<input type="hidden" name="location" id="location" />
-				<input type="hidden" name="length" id="length" />
-				<input type="hidden" name="seats" id="seats" />
-				<input type="hidden" name="comments" id="comments" />
-				<input type="hidden" name="cost" id="cost" />
+				<p>Course Study: <?php echo "$course" ?></p>
+				<p>Course Location: <?php echo "$location" ?></p>
+				<p>Course Length: <?php echo "$length" ?></p>
+				<p>Number of Seats: <?php echo "$seats" ?></p>
+				<p>Comments: <?php echo "$comments" ?></p>
+				<p>Total Cost: $<?php echo "$cost" ?></p>
 		    </fieldset>
 		    <fieldset id="billingSection" class="hidden">
 		    	<legend>Billing Address</legend>

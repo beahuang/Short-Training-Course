@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -17,21 +20,21 @@ if (!$conn) {
 	$sql_table="orders";
 
 	//already checked in process-enquire.php
-	$firstname = trim($_POST["firstname"]);
-	$lastname = trim($_POST["lastname"]);
-	$email = trim($_POST["email"]);
-	$streetaddress = trim($_POST["streetAddress"]);
-	$suburb = trim($_POST["suburb"]);
-	$state = trim($_POST["state"]);
-	$postcode = trim($_POST["postcode"]);
-	$phone = trim($_POST["phone"]);
-	$course = trim($_POST["course"]);
-	$location = trim($_POST["location"]);
-	$length = trim($_POST["length"]);
-	$seats = trim($_POST["seats"]);
-	$comments = trim($_POST["comments"]);
+	$firstname = $_SESSION["firstname"];
+	$lastname = $_SESSION["lastname"];
+	$email = $_SESSION["email"];
+	$streetaddress = $_SESSION["streetAddress"];
+	$suburb = $_SESSION["suburb"];
+	$state = $_SESSION["state"];
+	$postcode = $_SESSION["postcode"];
+	$phone = $_SESSION["phone"];
+	$course = $_SESSION["course"];
+	$location = $_SESSION["location"];
+	$length = $_SESSION["length"];
+	$seats = $_SESSION["seats"];
+	$comments = $_SESSION["comments"];
+	$cost = $_SESSION["cost"];
 
-	$cost = trim($_POST["cost"]);
 	$bname = trim($_POST["bfirstname"]);
 	$bstreetaddress = trim($_POST["bstreetaddress"]);
 	$bsuburb = trim($_POST["bsuburb"]);
