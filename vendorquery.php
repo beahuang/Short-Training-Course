@@ -19,7 +19,7 @@
 
 	switch ($orderType) {
 		case: "all"
-			$_SESSION["vendorQueryBy"] = "order_id"
+			$_SESSION["vendorQueryBy"] = "order_id";
 		break;
 		case: "name"
 			$_SESSION["vendorQueryBy"] = "";
