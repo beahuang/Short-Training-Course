@@ -151,7 +151,7 @@ if (isset ($_POST["firstname"]) && $_POST["firstname"] != "") {
 		}
 		return $errMsg;
 	}
-	$errMsg = $errMsg + checkPostcode($state,$postcode);
+	$errMsg .= checkPostcode($state,$postcode);
 
 	if ($phone=="") {
 		$errMsg .= "<p>You must enter your phone number.</p>";
